@@ -39,3 +39,12 @@ Para utilizarlo
 interface Props extends StackScreenProps<RootStackParams, 'PersonaScreen'>{
 
 }
+
+// Clase 109 Drawer Navigation
+
+Se debe tener todas las instalaciones y configuraciones que se definio arriba
+
+yarn add @react-navigation/drawer
+
+//Eliminar paquete de yarn
+yarn remove nombre-paquete
