@@ -14,3 +14,7 @@ lo utilizo para envolver App
 
 creo navegacionen carpeta aparte navigation y lo utilizo en App
 
+
+// Clase 105
+se puede utilizar initialRuteName = "" para indicar el screen con el que empieza
+otra propiedad importante es screenOptions pra personalizar las screens
