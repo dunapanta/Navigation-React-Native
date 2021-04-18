@@ -48,3 +48,20 @@ yarn add @react-navigation/drawer
 
 //Eliminar paquete de yarn
 yarn remove nombre-paquete
+
+//Clase 110 Desplegar Drawer u Ocultar
+
+headerLeft: () => (
+        <Button 
+          title="Drawer"
+          onPress={ () => navigation.toggleDrawer()}
+        />
+      )
+
+Si bolteo el dispositivo el menu aparece en landscape
+
+En DrawerNavigator
+
+const {width} = useWindowDimensions()
+
+drawerType={width > 600 ? 'permanent' : 'front'}
