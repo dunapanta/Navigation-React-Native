@@ -18,3 +18,24 @@ creo navegacionen carpeta aparte navigation y lo utilizo en App
 // Clase 105
 se puede utilizar initialRuteName = "" para indicar el screen con el que empieza
 otra propiedad importante es screenOptions pra personalizar las screens
+
+// cLASE 107 Se recomienda crear una interface para lasnavegacion 
+donde se especifica los nombres de los screen y sus argumentos con eso ya se obtiene 
+el autocompletado y evitar errores
+
+En Stack Navigator
+
+export type RootStackParams = {
+    Pagina1Screen: undefined,
+    Pagina2Screen: undefined,
+    Pagina3Screen: undefined,
+    PersonaScreen: { id: number, nombre: string },
+}
+
+const Stack = createStackNavigator<RootStackParams>();
+
+Para utilizarlo
+
+interface Props extends StackScreenProps<RootStackParams, 'PersonaScreen'>{
+
+}
