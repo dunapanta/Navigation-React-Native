@@ -81,3 +81,8 @@ drawerContent={(props) => <CustomDrawerContent />}
 yarn add @react-navigation/bottom-tabs
 
 const Tab = createBottomTabNavigator();
+
+// Clase 121 
+
+El useEffect() que se define en los Screens de los tabs
+solo se ejecuta una sola vez cuando se entra al tab (si no se definen mas dependencias)

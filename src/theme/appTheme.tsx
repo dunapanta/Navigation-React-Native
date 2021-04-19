@@ -1,5 +1,13 @@
 import { StyleSheet } from "react-native";
 
+export const colors = {
+    primary: '#7cb342',
+    primaryLigth: '#aee571',
+    primaryDark: '#4b830d',
+    sencondary: '#5e35b1',
+    secondaryDark: '#280680'
+}
+
 export const styles = StyleSheet.create({
     globalMargin: {
         marginHorizontal: 20
