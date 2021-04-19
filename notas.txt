@@ -70,7 +70,7 @@ drawerType={width > 600 ? 'permanent' : 'front'}
 // Clase 111 Custom Drawer
 se hace uso de drawerContent
 
-const CustomDrawerContent = () => {
+const CustomDrawerContent = (props: DrawerContentComponentProps<DrawerContentOptions>) => {
     return <Text>Hola Mundo</Text>
 }
 
