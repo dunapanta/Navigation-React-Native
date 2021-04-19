@@ -65,3 +65,13 @@ En DrawerNavigator
 const {width} = useWindowDimensions()
 
 drawerType={width > 600 ? 'permanent' : 'front'}
+
+
+// Clase 111 Custom Drawer
+se hace uso de drawerContent
+
+const CustomDrawerContent = () => {
+    return <Text>Hola Mundo</Text>
+}
+
+drawerContent={(props) => <CustomDrawerContent />}
