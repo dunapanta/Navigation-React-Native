@@ -36,10 +36,7 @@ export const Pagina1Screen = ({navigation}: Props) => {
         title="Navegar Página 2"
         onPress={() => navigation.navigate('Pagina2Screen')}
       />
-      <Button
-        title="Persona Screen"
-        onPress={() => navigation.navigate('PersonaScreen')}
-      />
+      
       <Text>Navegar con Argumentos</Text>
       <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
         <TouchableOpacity

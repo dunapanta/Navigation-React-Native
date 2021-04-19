@@ -75,3 +75,9 @@ const CustomDrawerContent = (props: DrawerContentComponentProps<DrawerContentOpt
 }
 
 drawerContent={(props) => <CustomDrawerContent />}
+
+// Clase 120 Bottom Tab Navigator
+
+yarn add @react-navigation/bottom-tabs
+
+const Tab = createBottomTabNavigator();
