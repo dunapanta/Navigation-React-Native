@@ -1,17 +1,75 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import {Platform, Text} from 'react-native';
+
 import {Tab1Screen} from '../screens/Tab1Screen';
 import {Tab2Screen} from '../screens/Tab2Screen';
-import {Tab3Screen} from '../screens/Tab3Screen';
 import {StackNavigator} from './StackNavigator';
 import {colors} from '../theme/appTheme';
-import {Text} from 'react-native';
 
-const Tab = createBottomTabNavigator();
+export const Tabs = () => {
+  return Platform.OS === 'ios' ? (
+    <BottomTabNavigatorIOS />
+  ) : (
+    <BottomTabNavigatorAndroid />
+  );
+};
 
-export const BottomTabNavigator = () => {
+const TabAndroid = createMaterialBottomTabNavigator();
+
+const BottomTabNavigatorAndroid = () => {
   return (
-    <Tab.Navigator
+    <TabAndroid.Navigator
+      sceneAnimationEnabled={true}
+      barStyle={{backgroundColor: colors.primary}}
+      screenOptions={({route}) => ({
+        tabBarIcon: ({color, focused }) => {
+          let iconName: string = '';
+
+          switch (route.name) {
+            case 'Tab1Screen':
+              iconName = 'T1';
+              break;
+            case 'Tab2Screen':
+              iconName = 'T2';
+              break;
+
+            case 'StackNavigator':
+              iconName = 'ST';
+              break;
+          }
+
+          return <Text style={{color}}>{iconName}</Text>;
+        },
+      })}
+      >
+      <TabAndroid.Screen
+        name="Tab1Screen"
+        options={{
+          title: 'Tab1',
+        }}
+        component={Tab1Screen}
+      />
+      <TabAndroid.Screen
+        name="Tab2Screen"
+        options={{title: 'Tab2'}}
+        component={Tab2Screen}
+      />
+      <TabIOS.Screen
+        name="StackNavigator"
+        options={{title: 'Stack'}}
+        component={StackNavigator}
+      />
+    </TabAndroid.Navigator>
+  );
+};
+
+const TabIOS = createBottomTabNavigator();
+
+const BottomTabNavigatorIOS = () => {
+  return (
+    <TabIOS.Navigator
       sceneContainerStyle={{
         backgroundColor: 'white',
       }}
@@ -55,23 +113,23 @@ export const BottomTabNavigator = () => {
         }}
         component={Tab1Screen}
       /> */}
-      <Tab.Screen
+      <TabIOS.Screen
         name="Tab1Screen"
         options={{
           title: 'Tab1',
         }}
         component={Tab1Screen}
       />
-      <Tab.Screen
+      <TabIOS.Screen
         name="Tab2Screen"
         options={{title: 'Tab2'}}
         component={Tab2Screen}
       />
-      <Tab.Screen
+      <TabIOS.Screen
         name="StackNavigator"
         options={{title: 'Stack'}}
         component={StackNavigator}
       />
-    </Tab.Navigator>
+    </TabIOS.Navigator>
   );
 };

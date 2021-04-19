@@ -16,7 +16,7 @@ import {
 import {SettingsScreen} from '../screens/SettingsScreen';
 import {StackNavigator} from './StackNavigator';
 import {styles} from '../theme/appTheme';
-import { BottomTabNavigator } from './BottomTabNavigator';
+import { Tabs } from './BottomTabNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -28,7 +28,7 @@ export const CustomDrawerNavigator = () => {
       //drawerPosition="right"
       drawerType={width > 600 ? 'permanent' : 'front'}
       drawerContent={props => <CustomDrawerContent {...props} />}>
-      <Drawer.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
+      <Drawer.Screen name="Tabs" component={Tabs} />
       <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
     </Drawer.Navigator>
   );
@@ -53,7 +53,7 @@ const CustomDrawerContent = ({
       <View style={styles.menuContainer}>
         <TouchableOpacity
           style={styles.menuButton}
-          onPress={() => navigation.navigate('BottomTabNavigator')}>
+          onPress={() => navigation.navigate('Tabs')}>
           <Text style={styles.menuText}>Navegación</Text>
         </TouchableOpacity>
 

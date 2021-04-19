@@ -86,3 +86,9 @@ const Tab = createBottomTabNavigator();
 
 El useEffect() que se define en los Screens de los tabs
 solo se ejecuta una sola vez cuando se entra al tab (si no se definen mas dependencias)
+
+
+// Clase 123 Tab Navigation Bottom Android
+
+yarn add @react-navigation/material-bottom-tabs react-native-paper
+yarn add react-native-vector-icons
