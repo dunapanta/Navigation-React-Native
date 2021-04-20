@@ -101,3 +101,26 @@ para quitar warnings
 
 import {LogBox} from 'react-native'
 LogBox.ignoreLogs(['Sending']) 
+
+// Clase 125 Iconos
+
+https://github.com/oblador/react-native-vector-icons
+
+yarn add react-native-vector-icons
+
+// CONFIGURAR ANDROID
+
+Agregar la siguiente linea para incluir todos los iconos
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+ o esta para solo Ionicons
+
+/* Iconos de Ionicons */
+project.ext.vectoricons = [
+    iconFontNames: [ 'Ionicons.ttf'] // Name of the font files you want to copy
+]
+
+en android/app/build.gradle
+
+tipado para trabajar con typescript
+yarn add -D @types/react-native-vector-icons

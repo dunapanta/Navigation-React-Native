@@ -1,4 +1,10 @@
 apply plugin: "com.android.application"
+/* Iconos de Ionicons */
+project.ext.vectoricons = [
+    iconFontNames: [ 'Ionicons.ttf'] // Name of the font files you want to copy
+]
+/* Todos los Iconos */
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 import com.android.build.OutputFile
 
