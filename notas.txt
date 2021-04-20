@@ -92,3 +92,12 @@ solo se ejecuta una sola vez cuando se entra al tab (si no se definen mas depend
 
 yarn add @react-navigation/material-bottom-tabs react-native-paper
 yarn add react-native-vector-icons
+
+// Clase 124 Material Top Navigator
+
+yarn add @react-navigation/material-top-tabs react-native-tab-view@^2.16.0
+
+para quitar warnings
+
+import {LogBox} from 'react-native'
+LogBox.ignoreLogs(['Sending']) 
