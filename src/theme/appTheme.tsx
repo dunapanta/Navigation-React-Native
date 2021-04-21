@@ -42,9 +42,12 @@ export const styles = StyleSheet.create({
         alignItems: 'center'
     },
     menuButton:{
+        flexDirection: 'row',
+        alignItems: 'center',
         marginVertical: 10
     },
     menuText:{
-        fontSize: 24
+        fontSize: 24,
+        paddingLeft: 12
     }
 });

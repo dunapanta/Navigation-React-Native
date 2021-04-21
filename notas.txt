@@ -124,3 +124,8 @@ en android/app/build.gradle
 
 tipado para trabajar con typescript
 yarn add -D @types/react-native-vector-icons
+
+
+// Clase 127 Iconos en IOS
+
+ir a node_modules/react-native-vector-icons

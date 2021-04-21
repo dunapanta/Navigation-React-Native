@@ -12,6 +12,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import {SettingsScreen} from '../screens/SettingsScreen';
 import {StackNavigator} from './StackNavigator';
@@ -54,12 +55,14 @@ const CustomDrawerContent = ({
         <TouchableOpacity
           style={styles.menuButton}
           onPress={() => navigation.navigate('Tabs')}>
+            <Icon name="home-outline" size={28} color="#721" />
           <Text style={styles.menuText}>Navegación</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.menuButton}
           onPress={() => navigation.navigate('SettingsScreen')}>
+          <Icon name="settings-outline" size={28} color="#721" />
           <Text style={styles.menuText}>Ajustes</Text>
         </TouchableOpacity>
       </View>

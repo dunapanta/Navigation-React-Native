@@ -1,5 +1,6 @@
 import React from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {TopTabChatScreen} from '../screens/TopTabChatScreen';
 import {TopTabContactsScreen} from '../screens/TopTabContactsScreen';
 import {TopTabAlbums} from '../screens/TopTabAlbums';
@@ -38,18 +39,18 @@ export const TopTabNavigator = () => {
 
       screenOptions={({route}) => ({
         tabBarIcon: ({color, focused }) => {
-          let iconName: string = '';
+          let iconName;
 
           switch (route.name) {
             case 'TopTabChatScreen':
-              iconName = 'Chat';
+              iconName = <Icon name="rocket-outline" size={25} color="#721" />
               break;
             case 'TopTabContactsScreen':
-              iconName = 'Contactos';
+              iconName = <Icon name="rainy-outline" size={25} color="#721" />
               break;
 
             case 'TopTabAlbums':
-              iconName = 'Albums';
+              iconName = <Icon name="albums-outline" size={25} color="#721" />
               break;
           }
 

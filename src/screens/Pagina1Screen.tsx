@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   useWindowDimensions,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import {styles} from '../theme/appTheme';
 
@@ -24,7 +25,11 @@ export const Pagina1Screen = ({navigation}: Props) => {
         width > 600 ? (
           ''
         ) : (
-          <Button title="Drawer" onPress={() => navigation.toggleDrawer()} />
+          <TouchableOpacity
+            style={{paddingLeft: 20}}
+            onPress={() => navigation.toggleDrawer()}>
+            <Icon name="menu-outline" size={30} color="#721" />
+          </TouchableOpacity>
         ),
     });
   }, [width]);
@@ -36,7 +41,7 @@ export const Pagina1Screen = ({navigation}: Props) => {
         title="Navegar Página 2"
         onPress={() => navigation.navigate('Pagina2Screen')}
       />
-      
+
       <Text>Navegar con Argumentos</Text>
       <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
         <TouchableOpacity
@@ -47,6 +52,7 @@ export const Pagina1Screen = ({navigation}: Props) => {
               nombre: 'Daniel',
             })
           }>
+            <Icon name="person-outline" size={30} color="#136" />
           <Text style={styles.text}>Daniel</Text>
         </TouchableOpacity>
 

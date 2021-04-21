@@ -2,6 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {Platform, Text} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import {Tab1Screen} from '../screens/Tab1Screen';
 import {Tab2Screen} from '../screens/Tab2Screen';
@@ -26,22 +27,23 @@ const BottomTabNavigatorAndroid = () => {
       barStyle={{backgroundColor: colors.primary}}
       screenOptions={({route}) => ({
         tabBarIcon: ({color, focused }) => {
-          let iconName: string = '';
+          let iconName;
 
           switch (route.name) {
             case 'Tab1Screen':
-              iconName = 'T1';
+              iconName = <Icon name="paw-outline" size={25} color="#721" />
               break;
             case 'Tab2Screen':
-              iconName = 'T2';
+              iconName = <Icon name="earth-outline" size={25} color="#444" />
               break;
 
             case 'StackNavigator':
-              iconName = 'ST';
+              iconName = <Icon name="hammer-outline" size={25} color="#777" />
               break;
           }
 
           return <Text style={{color}}>{iconName}</Text>;
+          /* return <Icon name={iconName} size={25} color="#777" /> */
         },
       })}
       >
