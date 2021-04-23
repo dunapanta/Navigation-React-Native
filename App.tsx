@@ -5,14 +5,25 @@ import { NavigationContainer } from '@react-navigation/native';
 import { StackNavigator } from './src/navigator/StackNavigator';
 import { DrawerNavigator } from './src/navigator/DrawerNavigator';
 import { CustomDrawerNavigator } from './src/navigator/CustomDrawerNavigator';
+import { AuthProvider } from './src/context/AuthContext';
 
 const App = () => {
   return (
     <NavigationContainer>
       {/* <StackNavigator /> */}
       {/* <DrawerNavigator /> */}
-      <CustomDrawerNavigator />
+      <AppState>
+        <CustomDrawerNavigator />
+      </AppState>
     </NavigationContainer>
+  )
+}
+
+const AppState = ({children}: any) => {
+  return (
+    <AuthProvider>
+      {children}
+    </AuthProvider>
   )
 }
 
