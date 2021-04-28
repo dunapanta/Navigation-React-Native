@@ -23,7 +23,7 @@ export interface AuthContextProps {
 export const AuthContext = createContext({} as AuthContextProps);
 
 //Proveedor del estado
-export const AuthProvider = ({children}: {children: JSX.Element}) => {
+export const AuthProvider = ({children}: {children: any}) => {
   return (
     <AuthContext.Provider
       value={{
