@@ -10,6 +10,10 @@ type AuthAction =
     }
   | {
       type: 'logout';
+    }
+  | {
+      type: 'changeUsername';
+      payload: string;
     };
 
 export const authReducer = (
@@ -35,6 +39,12 @@ export const authReducer = (
         isLoggedIn: false,
         username: undefined,
         favoriteIcon: undefined,
+      };
+
+    case 'changeUsername':
+      return {
+        ...state,
+        username: action.payload,
       };
 
     default:
